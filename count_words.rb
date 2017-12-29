@@ -3,14 +3,7 @@
 пояснением, потом говорит, что пользователь может ввести y, yes, д, да, для ввода новой фразы или ввести n, no, н, нет,
 для завершения программы
 =end
-
-loop do
-puts "введите фразу, для подсчёта кол-во слов"
-   number_of_words = gets.chomp.strip.scan(/\w+/).size
-puts "кол-во слов в фразе = #{number_of_words}"
-puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
-
-def check_unswer
+def check_answer
 quit = false
 until quit
   answer = gets.chomp.downcase
@@ -24,6 +17,14 @@ else
 end
 end
 end
-  check_unswer
+
+loop do
+puts "введите фразу, для подсчёта кол-во слов"
+   number_of_words = gets.chomp.strip.scan(/\w+/).size
+puts "кол-во слов в фразе = #{number_of_words}"
+puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
+
+
+  check_answer
 end
 
