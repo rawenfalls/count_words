@@ -21,8 +21,10 @@ end
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  number_of_words = gets.chomp.strip.scan(/\w+/).size
+  phrase = gets.chomp.strip.scan(/\w+/)
+  number_of_words = phrase.size
   puts "кол-во слов в фразе = #{number_of_words}"
+  puts phrase
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
   check_answer
 end
