@@ -4,18 +4,18 @@
 для завершения программы
 =end
 
-def check_answe
- quit = false
-    until quit
-      answer = gets.chomp.downcase
-      yes_or_no = [["y", "yes", "д", "да"], ["n", "no", "н", "нет"]]
-        if yes_or_no.assoc("y").include?(answer)
-        quit = true
-        elsif yes_or_no.assoc("n").include?(answer)
-        abort
-        else
-        puts "некоректный ввод, попробуйте ещё раз"
-        end
+def check_answer
+  quit = false
+  until quit
+    answer = gets.chomp.downcase
+    yes_or_no = [["y", "yes", "д", "да"], ["n", "no", "н", "нет"]]
+    if yes_or_no.assoc("y").include?(answer)
+      quit = true
+    elsif yes_or_no.assoc("n").include?(answer)
+      abort
+    else
+      puts "некоректный ввод, попробуйте ещё раз"
+    end
   end
 end
 
@@ -24,6 +24,6 @@ loop do
   number_of_words = gets.chomp.strip.scan(/\w+/).size
   puts "кол-во слов в фразе = #{number_of_words}"
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
-  check_answer
+  check_unswer
 end
 
