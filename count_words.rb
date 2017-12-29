@@ -15,7 +15,7 @@ def check_answe
         abort
         else
         puts "некоректный ввод, попробуйте ещё раз"
-    end
+        end
   end
 end
 
