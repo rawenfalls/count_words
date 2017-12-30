@@ -4,7 +4,7 @@
 для завершения программы
 =end
 
-current_path = File.dirname(__FILE__) + '/excuses'
+current_path = File.dirname(__FILE__) + '/excuses.txt'
 file =File.new(current_path,'r:UTF-8')
 excuses = file.readlines.to_a
 file.close
