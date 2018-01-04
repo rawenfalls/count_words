@@ -26,7 +26,6 @@ end
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
   phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-\_]+/)
-  puts phrase.class
 
   i = 0
   loop do
