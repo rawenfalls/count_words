@@ -5,7 +5,7 @@
 =end
 
 file =File.open('excuses.txt')
-excuses = file.readlines.to_a
+excuses = file.readlines
 file.close
 
 def check_answer
@@ -27,6 +27,7 @@ loop do
   puts "введите фразу, для подсчёта кол-во слов"
   phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-\_]+/)
   puts phrase.class
+
   i = 0
   loop do
     phrase.delete "#{excuses[i].chomp}"
