@@ -25,14 +25,10 @@ loop do
   puts "введите фразу, для подсчёта кол-во слов"
   phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-\_]+/)
 excuses = excuses & phrase
+excuses.map do |excuse|
+  phrase.delete excuse
+end
 
-  i = 0
-  loop do
-    phrase.delete "#{excuses[i]}"
-    i = i + 1
-    break if excuses[i] == nil
-  end
-  
   number_of_words = phrase.size
   puts "кол-во слов в фразе = #{number_of_words}"
   puts phrase
