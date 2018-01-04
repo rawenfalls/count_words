@@ -4,9 +4,7 @@
 для завершения программы
 =end
 
-file =File.open('excuses.txt')
-excuses = file.readlines
-file.close
+excuses = ["на","под","закиз","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато"]
 
 def check_answer
   quit = false
@@ -26,10 +24,11 @@ end
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
   phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-\_]+/)
-
+excuses = excuses & phrase
+  
   i = 0
   loop do
-    phrase.delete "#{excuses[i].chomp}"
+    phrase.delete "#{excuses[i]}"
     i = i + 1
     break if excuses[i] == nil
   end
