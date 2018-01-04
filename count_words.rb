@@ -23,7 +23,7 @@ end
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-\_]+/)
+  phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
 excuses = excuses & phrase
 excuses.map do |excuse|
   phrase.delete excuse
