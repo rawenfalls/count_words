@@ -4,7 +4,7 @@
 для завершения программы
 =end
 
-excuses = ["на","под","закиз","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато"]
+excuses = ["на","под","закиз","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_"]
 
 def check_answer
   quit = false
@@ -25,14 +25,14 @@ loop do
   puts "введите фразу, для подсчёта кол-во слов"
   phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-\_]+/)
 excuses = excuses & phrase
-  
+
   i = 0
   loop do
     phrase.delete "#{excuses[i]}"
     i = i + 1
     break if excuses[i] == nil
   end
-
+  
   number_of_words = phrase.size
   puts "кол-во слов в фразе = #{number_of_words}"
   puts phrase
