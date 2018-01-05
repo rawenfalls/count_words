@@ -29,8 +29,6 @@ loop do
   unacceptable_words = unacceptable_words & alphabetic_expression_downcase
   unacceptable_words.map do |word|
     alphabetic_expression.delete (word)
-    alphabetic_expression.delete (word.upcase)
-    alphabetic_expression.delete (word.capitalize)
   end
 
   puts "кол-во слов в фразе = #{alphabetic_expression.size}" , alphabetic_expression
