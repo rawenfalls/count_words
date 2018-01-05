@@ -22,16 +22,13 @@ end
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  alphabetic_expression = gets.chomp.strip
-
-  alphabetic_expression_downcase = alphabetic_expression.downcase.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
-  alphabetic_expression = alphabetic_expression.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
-  unacceptable_words = unacceptable_words & alphabetic_expression_downcase
-  unacceptable_words.map do |word|
-    alphabetic_expression.delete (word)
+  sdsd = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
+  unacceptable_words = unacceptable_words & sdsd
+  unacceptable_words.map do /|word|/i
+    sdsd.delete word
   end
 
-  puts "кол-во слов в фразе = #{alphabetic_expression.size}" , alphabetic_expression
+  puts "кол-во слов в фразе = #{sdsd.size}" , sdsd
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
   check_answer
 end
