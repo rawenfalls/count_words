@@ -24,7 +24,7 @@ loop do
   puts "введите фразу, для подсчёта кол-во слов"
   sdsd = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
   unacceptable_words = unacceptable_words & sdsd
-  unacceptable_words.map do /|word|/i
+  unacceptable_words.map do |word|
     sdsd.delete word
   end
 
