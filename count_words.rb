@@ -4,8 +4,7 @@
 для завершения программы
 =end
 
-unacceptable_words = ["на","под","за","из","к","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_"]
-
+unacceptable_words = ["на","под","за","из","к","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_","как","да","или","либо"]
 def check_answer
   quit = false
   until quit
@@ -23,15 +22,18 @@ end
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  phrase = gets.chomp.downcase.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
-  unacceptable_words = unacceptable_words & phrase
-  unacceptable_words.map do |unacceptable_word|
-    phrase.delete unacceptable_word
+  phrase = gets.chomp.strip
+
+  phrase_downcase = phrase.downcase.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
+  phrase = phrase.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
+  unacceptable_words = unacceptable_words & phrase_downcase
+  unacceptable_words.map do |word|
+    phrase.delete (word)
+    phrase.delete (word.upcase)
+    phrase.delete (word.capitalize)
   end
 
-  number_of_words = phrase.size
-  puts "кол-во слов в фразе = #{number_of_words}"
-  puts phrase
+  puts "кол-во слов в фразе = #{phrase.size}" , phrase
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
   check_answer
 end
