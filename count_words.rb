@@ -23,7 +23,7 @@ end
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  phrase = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
+  phrase = gets.chomp.downcase.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
   unacceptable_words = unacceptable_words & phrase
   unacceptable_words.map do |unacceptable_word|
     phrase.delete unacceptable_word
