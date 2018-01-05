@@ -4,7 +4,7 @@
 для завершения программы
 =end
 
-unacceptable_words = ["на","под","за","из","к","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_","как","да","или","либо"]
+ignored_words = ["на","под","за","из","к","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_","как","да","или","либо"]
 def check_answer
   quit = false
   until quit
@@ -23,8 +23,8 @@ end
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
   sdsd = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
-  unacceptable_words = unacceptable_words & sdsd
-  unacceptable_words.map do |word|
+  ignored_words = ignored_words & sdsd
+  ignored_words.map do |word|
     sdsd.delete word
   end
 
