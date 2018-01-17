@@ -23,9 +23,7 @@ end
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
   entered_words = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
-
   ignored_words.each { |ignored_word| entered_words.delete_if{ |word| word =~ /^#{ignored_word}$/i } }
-
   puts "кол-во слов в фразе = #{entered_words.size}" , entered_words
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
   check_answer
