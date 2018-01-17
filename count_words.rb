@@ -4,27 +4,13 @@
 для завершения программы
 =end
 
-ignored_words = ["на","под","за","из","к","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_","как","да","или","либо"]
-def check_answer
-  quit = false
-  until quit
-    answer = gets.chomp.downcase
-    yes_or_no = [["y", "yes", "д", "да"], ["n", "no", "н", "нет"]]
-    if yes_or_no.assoc("y").include?(answer)
-      quit = true
-    elsif yes_or_no.assoc("n").include?(answer)
-      abort
-    else
-      puts "некоректный ввод, попробуйте ещё раз"
-    end
-  end
-end
+require "./checker.rb"
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  entered_words = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
-  ignored_words.each { |ignored_word| entered_words.delete_if{ |word| word =~ /^#{ignored_word}$/i } }
-  puts "кол-во слов в фразе = #{entered_words.size}" , entered_words
+  @entered_words = gets.chomp.strip.scan(/[A-Za-zА-Яа-я0-9\-_]+/)
+  check_words
+  puts "кол-во слов в фразе = #{@entered_words.size}" , @entered_words
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
   check_answer
 end
