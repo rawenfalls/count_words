@@ -13,9 +13,9 @@ def check_answer
   end
 end
 
-def check_words
+def check_words(entered_words)
   ignored_words = ["на","под","за","из","к","по","об","от","в","у","с","о","над","около","при","перед","через","и","а","но","хотя","чтобы","зато","-","_","как","да","или","либо"]
-  ignored_words.each { |ignored_word| @entered_words.delete_if{ |word| word =~ /^#{ignored_word}$/i } }
+  ignored_words.each { |ignored_word| entered_words.delete_if{ |word| word =~ /^#{ignored_word}$/i } }
 end
 
 
