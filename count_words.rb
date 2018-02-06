@@ -8,7 +8,7 @@ require "./checker.rb"
 
 loop do
   puts "введите фразу, для подсчёта кол-во слов"
-  entered_words = gets.chomp.strip.scan(/[А-Яа-я][\wА-Яа-я\-_]+/)
+  entered_words = gets.chomp.strip.scan(/[\wА-Яа-я\-_]+/)
   check_words(entered_words)
   puts "кол-во слов в фразе = #{entered_words.size}" , entered_words
   puts "если хотите подсчитать кол-во слов в новой фразе введите y, yes, д, да, если хотите закончить программу введите n, no, н, нет"
